@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>TO DO LIST</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+      <div class="box" id="heading">
+        <h1><%= daytype %></h1>
+      </div>
+
+<div class="box">
+
+
+
+    <% for(var i=0;i<newlistitem.length;i++){ %>
+      <form action="/delete" method="post">
+
+
+      <div class="item">
+        <input type="checkbox" name="checkbox" value="<%=newlistitem[i]._id%>" onchange="this.form.submit()">
+          <p><%= newlistitem[i].name %></p>
+      </div>
+
+        </form>
+
+    <% } %>
+
+    <form class="item" action="/" method="post">
+      <input type="text" name="additem" placeholder="Add a new item">
+      <button type="submit" name="submit">+</button>
+    </form>
+</div>
+
+
+
+  </body>
+</html>
